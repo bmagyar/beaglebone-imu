@@ -42,5 +42,5 @@ void ITG3205::read()
   _x = (((_i2c->readBuf[4]) << 8) | _i2c->readBuf[5]) - offX;
   _y = (((_i2c->readBuf[2]) << 8) | _i2c->readBuf[3]) - offY;
   _x = (((_i2c->readBuf[6]) << 8) | _i2c->readBuf[7]) - offZ;
-  _temp = ((_i2c->readBuf[0]) << 8) | _i2c->readBuf[1];
+  _temp = ((_i2c->readBuf[0]) << 8) | _i2c->readBuf[1]; // check datasheet for more
 }

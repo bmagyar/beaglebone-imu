@@ -35,6 +35,17 @@ void BMA180::read()
   _x = convertAcceleration(ACC_X_MSB, ACC_X_LSB);
   _y = convertAcceleration(ACC_Y_MSB, ACC_Y_LSB);
   _z = convertAcceleration(ACC_Z_MSB, ACC_Z_LSB);
+
+  short tmp = _i2c->readBuf[TEMP]; // = -80C 0b10000000  0b00000010; = +25C
+  int temperature;
+  if(tmp&0x80) {
+      tmp = ~tmp + 0b00000001;
+      temperature = 128 - tmp;
+    }
+    else {
+      temperature = 128 + tmp;
+    }
+  _temp = -40.0 + ((float)temperature*0.5f); // -40 C is a const offset
 }
 
 short BMA180::convertAcceleration(int msb_reg_addr, int lsb_reg_addr)
