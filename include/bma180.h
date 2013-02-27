@@ -4,7 +4,7 @@
 
 #define BMA180_ADDRESS 0x40
 
-#include "accelerometer.h"
+#include "sensor3axis.h"
 
 enum BMA180_RANGE {
   PLUSMINUS_1_G     = 0,
@@ -35,7 +35,7 @@ enum BMA180_MODECONFIG {
 };
 
 
-class BMA180 : public AcceleroMeter
+class BMA180 : public Sensor3Axis
 {
 public:
    virtual void init(I2C *i2c);

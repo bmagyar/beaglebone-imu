@@ -4,9 +4,9 @@
 
 #define ITG3205_ADDRESS 0x68
 
-#include "i2c.h"
-#include "bma180.h"
 #include "imu.h"
+#include "bma180.h"
+#include "itg3205.h"
 
 /* Class for GY-81 IMU board
  * The board features a BMA180, ITG3205, HMC5883L, BMP085
@@ -21,7 +21,7 @@ class GY_81 : public IMU
     virtual void update();
   protected:
     BMA180 acc;
-//    ITG3205 gyro;
+    ITG3205 gyro;
 //    HMC5883L compass;
 //    BMP085 baro;
         

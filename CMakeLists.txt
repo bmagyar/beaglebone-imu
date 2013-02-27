@@ -5,7 +5,7 @@ INCLUDE_DIRECTORIES(./include)
 
 SET(headers include/i2c.h
             include/imu.h
-            include/accelerometer.h
+            include/sensor3axis.h
             include/bma180.h
             include/itg3205.h
             include/hmc588l.h

@@ -6,7 +6,7 @@ GY_81::GY_81()
   i2c = new I2C();
 
   acc.init(i2c);
-  //  gyro.init(i2c);
+  gyro.init(i2c);
   //  compass.init(i2c);
   //  baro.init(i2c);
 }
@@ -19,7 +19,11 @@ GY_81::~GY_81()
 void GY_81::print()
 {
   std::cout << "A: [" << acc.x() << ", " << acc.y()
-            << ", " << acc.z() << "]" << std::endl;
+            << ", " << acc.z() << "]" << std::endl
+            << "A temp: " << acc.temp() << std::endl
+            << "G: [" << gyro.x() << ", " << gyro.y()
+            << ", " << gyro.z() << "]" << std::endl
+            << "G temp: " << gyro.temp() << std::endl;
 }
 
 void GY_81::update()

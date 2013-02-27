@@ -32,9 +32,9 @@ void BMA180::init(I2C *i2c)
 void BMA180::read()
 {
   _i2c->readMultiBytes(BMA180_ADDRESS, 0x00);
-  accX = convertAcceleration(ACC_X_MSB, ACC_X_LSB);
-  accY = convertAcceleration(ACC_Y_MSB, ACC_Y_LSB);
-  accZ = convertAcceleration(ACC_Z_MSB, ACC_Z_LSB);
+  _x = convertAcceleration(ACC_X_MSB, ACC_X_LSB);
+  _y = convertAcceleration(ACC_Y_MSB, ACC_Y_LSB);
+  _z = convertAcceleration(ACC_Z_MSB, ACC_Z_LSB);
 }
 
 short BMA180::convertAcceleration(int msb_reg_addr, int lsb_reg_addr)
