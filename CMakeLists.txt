@@ -12,7 +12,8 @@ SET(headers include/i2c.h
             include/bmp085.h
             include/gy-81.h)
 
-add_library(i2c src/i2c.cpp)
+# added ${headers} here to force qt creator to list them
+add_library(i2c src/i2c.cpp ${headers})
 
 add_library(sensors src/bma180.cpp
                     src/itg3205.cpp
