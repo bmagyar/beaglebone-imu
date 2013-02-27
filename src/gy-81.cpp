@@ -29,7 +29,7 @@ void GY_81::print()
 void GY_81::update()
 {
   acc.read();
-  //  gyro.read();
+  gyro.read();
   //  compass.read();
   //  baro.read();
 }
